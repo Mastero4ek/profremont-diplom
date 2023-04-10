@@ -1,14 +1,16 @@
+import { showModal } from "./helpers"
+
 export const modal = () => {
 	const openModalBtn = document.querySelector('.button > .fancyboxModal'),
 		modal = document.querySelector('.header-modal'),
 		overlay = document.querySelector('.overlay'),
 		closeModalBtn = document.querySelector('.header-modal__close')
 
+	modal.style.top = '-100%'
+
 	openModalBtn.addEventListener('click', (e) => {
 		e.preventDefault()
-
-		modal.style.display = 'flex'
-		overlay.style.display = 'flex'
+		showModal(modal, overlay)
 	})
 
 	closeModalBtn.addEventListener('click', (e) => {
