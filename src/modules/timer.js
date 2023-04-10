@@ -1,8 +1,9 @@
-export const timer = (deadline) => {
-    const timerDay = document.querySelector('.count_1 > span'),
-        timerHours = document.querySelector('.count_2 > span'),
-        timerMinutes = document.querySelector('.count_3 > span'),
-        timerSeconds = document.querySelector('.count_4 > span');
+export const timer = (deadline, timerBlock) => {
+    const timerWrapper = document.getElementById(timerBlock),
+        timerDay = timerWrapper.querySelector('.count_1 > span'),
+        timerHours = timerWrapper.querySelector('.count_2 > span'),
+        timerMinutes = timerWrapper.querySelector('.count_3 > span'),
+        timerSeconds = timerWrapper.querySelector('.count_4 > span');
 
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime(),
