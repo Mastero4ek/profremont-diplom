@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle'
 
 export const slider = (block, next, prev, view, space) => {
     const swiper = new Swiper(block, {
-        speed: 500,
+        speed: 300,
         loop: true,
         navigation: {
             nextEl: next,
