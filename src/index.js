@@ -4,6 +4,7 @@ import { slider } from "./modules/slider"
 import { serviceModal } from "./modules/sevrvice-modal"
 import { scroll } from "./modules/scroll"
 import { certificates } from "./modules/certificates"
+import { calculator } from "./modules/calculator"
 
 timer('16 april 2023', 'order_1')
 timer('16 april 2023', 'order_2')
@@ -13,3 +14,4 @@ slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--lef
 serviceModal()
 scroll()
 certificates()
+calculator()
