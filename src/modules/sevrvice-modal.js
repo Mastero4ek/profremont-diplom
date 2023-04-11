@@ -19,4 +19,9 @@ export const serviceModal = () => {
         modal.style.display = 'none'
         overlay.style.display = 'none'
     })
+
+    overlay.addEventListener('click', (e) => {
+        modal.style.display = 'none'
+        overlay.style.display = 'none'
+    })
 }
