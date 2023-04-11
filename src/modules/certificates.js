@@ -2,11 +2,10 @@ import { animate } from './helpers'
 
 export const certificates = () => {
     const certificates = document.querySelectorAll('.sertificate-document'),
-        overlay = document.querySelector('.overlay'),
+        overlay = document.getElementById('overlay'),
+        certificatesWrapper = document.querySelector('.text-center'),
+        documents = certificatesWrapper.querySelectorAll('.document-overlay'),
         img = document.createElement('img');
-
-    const certificatesWrapper = document.querySelector('.text-center'),
-        documents = certificatesWrapper.querySelectorAll('.document-overlay')
 
     documents.forEach((doc) => {
         doc.addEventListener('mouseover', () => {
@@ -34,29 +33,40 @@ export const certificates = () => {
         })
     })
 
-    certificatesWrapper.addEventListener('click', (e) => {
-        e.preventDefault()
+    const showCertificate = (e) => {
+        let parent = e.target.parentElement,
+            href = parent.getAttribute('href')
 
-        const document = e.target.closest('.document-overlay')
-        if (document) {
-            console.log('gf');
-        }
+        overlay.style.display = 'flex'
+
+        img.setAttribute('src', href)
+        img.classList.add('sertificate--show')
+
+        overlay.append(img)
+
+        animate({
+            duration: 400,
+            timing(timeFraction) {
+                return timeFraction
+            },
+            draw(progress) {
+                img.style.transform = `scale(${progress})`
+            }
+        });
+    }
+
+    certificates.forEach((doc) => {
+        doc.addEventListener('click', (e) => {
+            e.preventDefault()
+
+            showCertificate(e)
+        })
     })
 
-    // certificates.forEach((doc, index) => {
-    //     doc.addEventListener('click', (e) => {
-    //         e.preventDefault()
-
-    //         overlay.style.display = 'flex'
-
-    //         img.setAttribute('src', 'images/documents/original/document4.jpg')
-    //         img.style.margin = '0 auto'
-    //         overlay.append(img)
-    //     })
-    // })
-
-    // overlay.addEventListener('click', () => {
-    //     img.remove()
-    //     overlay.style.display = 'none'
-    // })
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            img.remove()
+            overlay.style.display = 'none'
+        }
+    })
 }

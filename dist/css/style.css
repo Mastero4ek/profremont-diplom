@@ -1978,6 +1978,31 @@ input.error {
   transform: rotate(90deg);
 }
 
+.sertificate-document {
+  display: inline-block;
+  position: relative;
+}
+
+.overlay--show {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.sertificate--show {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  transform: scale(0);
+}
+
 @media (min-width: 576px) {
   .benefits-inner {
     width: 100%;
