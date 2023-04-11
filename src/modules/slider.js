@@ -1,8 +1,8 @@
 import Swiper from 'swiper/bundle'
 
-export const slider = (block, next, prev, view, space) => {
+export const slider = (block, speed, next, prev, view, space) => {
     const swiper = new Swiper(block, {
-        speed: 300,
+        speed: speed,
         loop: true,
         navigation: {
             nextEl: next,

@@ -6,8 +6,8 @@ import { timer } from "./modules/timer"
 import { certificates } from "./modules/certificates"
 
 modal()
-slider('.benefits-inner', '.benefits__arrow--right', '.benefits__arrow--left', 3, 20)
-slider('.services-inner', '.services__arrow--right', '.services__arrow--left', 2, 0)
+slider('.benefits-inner', 300, '.benefits__arrow--right', '.benefits__arrow--left', 3, 20)
+slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
 serviceModal()
 scroll()
 timer('16 april 2023', 'order_1')
