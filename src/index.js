@@ -5,6 +5,8 @@ import { serviceModal } from "./modules/sevrvice-modal"
 import { scroll } from "./modules/scroll"
 import { certificates } from "./modules/certificates"
 import { calculator } from "./modules/calculator"
+import { sendForm } from "./modules/sendForm"
+import { validationForm } from "./modules/validationForm"
 
 timer('16 april 2023', 'order_1')
 timer('16 april 2023', 'order_2')
@@ -15,3 +17,24 @@ serviceModal()
 scroll()
 certificates()
 calculator()
+validationForm()
+
+sendForm({
+    formWrapper: 'order_1',
+    someElem: [
+        {
+            type: 'block',
+            id: 'calc-total'
+        }
+    ]
+})
+
+sendForm({
+    formWrapper: 'order_2',
+    someElem: [
+        {
+            type: 'block',
+            id: 'calc-total'
+        }
+    ]
+})
