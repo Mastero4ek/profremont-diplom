@@ -28,6 +28,8 @@ export const timer = (deadline, timerBlock) => {
         timerSeconds.textContent = editTime(getTime.seconds)
     }
 
+    updateClock();
+
     const startTimer = () => {
         let idTimer = setInterval(() => {
             let getTime = getTimeRemaining()
