@@ -379,6 +379,7 @@ export const renderServiceBalkony = () => {
 
         slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
         serviceModal()
+        renderServiceInput('form-balkony')
     } else {
         servicesWrapper.insertAdjacentHTML('beforeend',
             `<div class="row swiper-wrapper">
@@ -748,6 +749,7 @@ export const renderServiceBalkony = () => {
 
         slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
         serviceModal()
+        renderServiceInput('form-balkony')
     }
 
     window.addEventListener('resize', () => {
@@ -1124,6 +1126,7 @@ export const renderServiceBalkony = () => {
 
             slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
             serviceModal()
+            renderServiceInput('form-balkony')
         } else {
             servicesWrapper.insertAdjacentHTML('beforeend',
                 `<div class="row swiper-wrapper">
@@ -1493,8 +1496,7 @@ export const renderServiceBalkony = () => {
 
             slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
             serviceModal()
+            renderServiceInput('form-balkony')
         }
     })
-
-    renderServiceInput('form-balkony')
 }

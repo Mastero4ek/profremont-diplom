@@ -4,8 +4,6 @@ export const renderServiceInput = (formId) => {
     serviceBtn.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const form = document.getElementById(formId);
-
-            console.log(btn);
             if (!form) return
 
             const subject = btn.getAttribute('data-subject'),

@@ -174,6 +174,7 @@ export const renderServiceKuhni = () => {
 
         slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
         serviceModal()
+        renderServiceInput('form-kuhni')
     } else {
         servicesWrapper.insertAdjacentHTML('beforeend',
             `<div class="row swiper-wrapper">
@@ -336,6 +337,7 @@ export const renderServiceKuhni = () => {
 
         slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
         serviceModal()
+        renderServiceInput('form-kuhni')
     }
 
     window.addEventListener('resize', () => {
@@ -507,6 +509,7 @@ export const renderServiceKuhni = () => {
 
             slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
             serviceModal()
+            renderServiceInput('form-kuhni')
         } else {
             servicesWrapper.insertAdjacentHTML('beforeend',
                 `<div class="row swiper-wrapper">
@@ -669,8 +672,7 @@ export const renderServiceKuhni = () => {
 
             slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
             serviceModal()
+            renderServiceInput('form-kuhni')
         }
     })
-
-    renderServiceInput('form-kuhni')
 }

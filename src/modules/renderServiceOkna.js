@@ -99,6 +99,7 @@ export const renderServiceOkna = () => {
 
         slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
         serviceModal()
+        renderServiceInput('form-okna')
     } else {
         servicesWrapper.insertAdjacentHTML('beforeend',
             `<div class="row swiper-wrapper">
@@ -186,6 +187,7 @@ export const renderServiceOkna = () => {
 
         slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
         serviceModal()
+        renderServiceInput('form-okna')
     }
 
     window.addEventListener('resize', () => {
@@ -282,6 +284,7 @@ export const renderServiceOkna = () => {
 
             slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
             serviceModal()
+            renderServiceInput('form-okna')
         } else {
             servicesWrapper.insertAdjacentHTML('beforeend',
                 `<div class="row swiper-wrapper">
@@ -369,8 +372,7 @@ export const renderServiceOkna = () => {
 
             slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
             serviceModal()
+            renderServiceInput('form-okna')
         }
     })
-
-    renderServiceInput('form-okna')
 }
