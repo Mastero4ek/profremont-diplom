@@ -1,7 +1,7 @@
 import { timer } from "./modules/timer"
-import { modal } from "./modules/modal"
+import { renderServiceSlider } from "./modules/renderServiceSlider"
 import { slider } from "./modules/slider"
-import { serviceModal } from "./modules/sevrvice-modal"
+import { modal } from "./modules/modal"
 import { scroll } from "./modules/scroll"
 import { certificates } from "./modules/certificates"
 import { calculator } from "./modules/calculator"
@@ -12,10 +12,9 @@ import { renderData } from "./modules/renderData"
 
 timer('16 april 2023', 'order_1')
 timer('16 april 2023', 'order_2')
+renderServiceSlider()
 modal()
 slider('.benefits-inner', 300, '.benefits__arrow--right', '.benefits__arrow--left', 3, 20, { delay: 1500, disableOnInteraction: true, })
-slider('.services-inner', 600, '.services__arrow--right', '.services__arrow--left', 1, 0)
-serviceModal()
 scroll()
 calculator()
 validationForm()
