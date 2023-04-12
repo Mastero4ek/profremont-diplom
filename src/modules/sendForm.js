@@ -54,6 +54,7 @@ export const sendForm = ({ formWrapper, someElem = [] }) => {
                     if (!element) return
 
                     formBody[elem.id] = element.value
+
                     if (formBody[elem.id] == '') delete formBody[elem.id]
                     break
 

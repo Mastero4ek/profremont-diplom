@@ -1,5 +1,7 @@
 import { timer } from "./modules/timer"
-import { renderServiceSlider } from "./modules/renderServiceSlider"
+import { renderServiceOkna } from "./modules/renderServiceOkna"
+import { renderServiceBalkony } from "./modules/renderServiceBalkony"
+import { renderServiceKuhni } from "./modules/renderServiceKuhni"
 import { slider } from "./modules/slider"
 import { modal } from "./modules/modal"
 import { scroll } from "./modules/scroll"
@@ -12,7 +14,9 @@ import { renderData } from "./modules/renderData"
 
 timer('16 april 2023', 'order_1')
 timer('16 april 2023', 'order_2')
-renderServiceSlider()
+renderServiceOkna()
+renderServiceBalkony()
+renderServiceKuhni()
 modal()
 slider('.benefits-inner', 300, '.benefits__arrow--right', '.benefits__arrow--left', 3, 20, { delay: 1500, disableOnInteraction: true, })
 scroll()

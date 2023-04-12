@@ -1,8 +1,9 @@
 import { slider } from "./slider"
 import { serviceModal } from "./sevrvice-modal"
 
-export const renderServiceSlider = () => {
-    const servicesWrapper = document.querySelector('.services-inner')
+export const renderServiceOkna = () => {
+    const servicesWrapper = document.getElementById('service-okna')
+    if (!servicesWrapper) return
 
     servicesWrapper.innerHTML = ''
 
