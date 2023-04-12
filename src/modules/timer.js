@@ -32,7 +32,6 @@ export const timer = (deadline, timerBlock) => {
 
     const startPromotionText = () => {
         block.style.pointerEvents = 'default'
-        block.style.opacity = '1'
         text.innerHTML = ''
         text.insertAdjacentHTML('beforeend',
             `и <span class="text-normal">получите скидку 20%</span> <br />на
@@ -42,7 +41,6 @@ export const timer = (deadline, timerBlock) => {
 
     const endPromotionText = () => {
         block.style.pointerEvents = 'none'
-        block.style.opacity = '0.7'
         text.innerHTML = ''
         text.insertAdjacentHTML('beforeend',
             `Акция завершена!`
@@ -68,6 +66,8 @@ export const timer = (deadline, timerBlock) => {
                 if (getTime.timeRemaining <= 0) {
                     clearTimeout(idTimer);
                 }
+
+                if (timerSeconds.textContent == '00') endPromotionText()
             }
         }, 1000);
     }
