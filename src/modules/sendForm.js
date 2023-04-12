@@ -47,19 +47,19 @@ export const sendForm = ({ formWrapper, someElem = [] }) => {
         })
 
         someElem.forEach(elem => {
-            const element = document.getElementById(elem.id)
+            const total = document.getElementById(elem.id)
 
             switch (true) {
                 case elem.type === 'block':
-                    if (!element) return
+                    if (!total) return
 
-                    formBody[elem.id] = element.value
+                    formBody[elem.id] = total.value
 
                     if (formBody[elem.id] == '') delete formBody[elem.id]
                     break
 
                 case elem.type === 'input':
-                    formBody[elem.id] = element.value
+                    formBody[elem.id] = total.value
                     break
             }
         })
@@ -69,7 +69,7 @@ export const sendForm = ({ formWrapper, someElem = [] }) => {
                 .then(data => {
                     console.log(formBody)
                     formBtn.textContent = 'Получить скидку!'
-                    formElements.forEach(input => input.value = '')
+                    form.reset()
                 })
                 .catch(error => {
                     formBtn.textContent = 'Ошибка запроса!'

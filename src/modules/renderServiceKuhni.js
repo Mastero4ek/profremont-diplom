@@ -1,5 +1,6 @@
 import { slider } from "./slider"
 import { serviceModal } from "./sevrvice-modal"
+import { renderServiceInput } from "./renderServiceInput"
 
 export const renderServiceKuhni = () => {
     const servicesWrapper = document.getElementById('service-kuhni')
@@ -671,4 +672,5 @@ export const renderServiceKuhni = () => {
         }
     })
 
+    renderServiceInput('form-kuhni')
 }
