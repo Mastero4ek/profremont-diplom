@@ -7,7 +7,7 @@ import { certificates } from "./modules/certificates"
 import { calculator } from "./modules/calculator"
 import { sendForm } from "./modules/sendForm"
 import { validationForm } from "./modules/validationForm"
-import { renderOverlay } from "./modules/helpers"
+import { renderOverlay } from "./modules/renderOverlay"
 import { renderData } from "./modules/renderData"
 
 timer('16 april 2023', 'order_1')
@@ -21,6 +21,7 @@ validationForm()
 renderOverlay()
 certificates()
 renderData()
+slider('.sertificate', 300, '.sertificate__arrow--right', '.sertificate__arrow--left', 1, 20)
 
 sendForm({
     formWrapper: 'order_1',

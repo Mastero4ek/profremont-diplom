@@ -5,7 +5,8 @@ export const certificates = () => {
         overlay = document.getElementById('overlay'),
         certificatesWrapper = document.querySelector('.text-center'),
         documents = certificatesWrapper.querySelectorAll('.document-overlay'),
-        img = document.createElement('img');
+        closeBtn = overlay.querySelector('.overlay-close > img'),
+        sertificateSwiper = document.querySelector('.sertificate');
 
     documents.forEach((doc) => {
         doc.addEventListener('mouseover', () => {
@@ -33,40 +34,24 @@ export const certificates = () => {
         })
     })
 
-    const showCertificate = (e) => {
-        let parent = e.target.parentElement,
-            href = parent.getAttribute('href')
-
-        overlay.style.display = 'flex'
-
-        img.setAttribute('src', href)
-        img.classList.add('sertificate--show')
-
-        overlay.append(img)
-
-        animate({
-            duration: 400,
-            timing(timeFraction) {
-                return timeFraction
-            },
-            draw(progress) {
-                img.style.transform = `scale(${progress})`
-            }
-        });
-    }
-
     certificates.forEach((doc) => {
         doc.addEventListener('click', (e) => {
             e.preventDefault()
+            overlay.style.display = 'flex'
 
-            showCertificate(e)
+            animate({
+                duration: 200,
+                timing(timeFraction) {
+                    return timeFraction
+                },
+                draw(progress) {
+                    sertificateSwiper.style.transform = `scale(${progress})`
+                }
+            })
         })
     })
 
     overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            img.remove()
-            overlay.style.display = 'none'
-        }
+        if (e.target === closeBtn) overlay.style.display = 'none'
     })
 }

@@ -30,13 +30,3 @@ export const showModal = (modal, overlay) => {
         }
     })
 }
-
-export const renderOverlay = () => {
-    const body = document.querySelector('body'),
-        overlay = document.createElement('div');
-
-    overlay.classList.add('overlay--show')
-    overlay.setAttribute('id', 'overlay')
-
-    body.append(overlay)
-}
