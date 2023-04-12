@@ -3,7 +3,11 @@ export const timer = (deadline, timerBlock) => {
         timerDay = timerWrapper.querySelector('.count_1 > span'),
         timerHours = timerWrapper.querySelector('.count_2 > span'),
         timerMinutes = timerWrapper.querySelector('.count_3 > span'),
-        timerSeconds = timerWrapper.querySelector('.count_4 > span');
+        timerSeconds = timerWrapper.querySelector('.count_4 > span'),
+        text = timerWrapper.querySelector('.order-subheading'),
+        block = timerWrapper.querySelector('.order-inner');
+
+    const editTime = num => (num < 10) ? `0${num}` : num
 
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime(),
@@ -17,8 +21,6 @@ export const timer = (deadline, timerBlock) => {
         return { timeRemaining, days, hours, minuts, seconds }
     }
 
-    const editTime = num => (num < 10) ? `0${num}` : num
-
     const updateClock = () => {
         let getTime = getTimeRemaining()
 
@@ -28,7 +30,33 @@ export const timer = (deadline, timerBlock) => {
         timerSeconds.textContent = editTime(getTime.seconds)
     }
 
-    updateClock();
+    const startPromotionText = () => {
+        block.style.pointerEvents = 'default'
+        block.style.opacity = '1'
+        text.innerHTML = ''
+        text.insertAdjacentHTML('beforeend',
+            `и <span class="text-normal">получите скидку 20%</span> <br />на
+            установку окон`
+        )
+    }
+
+    const endPromotionText = () => {
+        block.style.pointerEvents = 'none'
+        block.style.opacity = '0.7'
+        text.innerHTML = ''
+        text.insertAdjacentHTML('beforeend',
+            `Акция завершена!`
+        )
+    }
+
+    let getTime = getTimeRemaining()
+
+    if (getTime.timeRemaining <= 0) {
+        endPromotionText()
+    } else {
+        startPromotionText()
+        updateClock();
+    }
 
     const startTimer = () => {
         let idTimer = setInterval(() => {
@@ -37,7 +65,7 @@ export const timer = (deadline, timerBlock) => {
             if (getTime.timeRemaining > 0) {
                 updateClock();
 
-                if (getTime.timeRemaining == 0) {
+                if (getTime.timeRemaining <= 0) {
                     clearTimeout(idTimer);
                 }
             }

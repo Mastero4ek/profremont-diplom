@@ -20,7 +20,7 @@ export const calculator = () => {
             totalValue = 0;
         }
 
-        calcTotal.value = totalValue
+        calcTotal.value = totalValue * 1000
     }
 
     const calcDefault = () => {

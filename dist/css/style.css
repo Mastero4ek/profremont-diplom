@@ -2003,6 +2003,11 @@ input.error {
   transform: scale(0);
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 576px) {
   .benefits-inner {
     width: 100%;

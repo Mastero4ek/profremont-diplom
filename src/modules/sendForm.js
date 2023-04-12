@@ -1,6 +1,9 @@
 export const sendForm = ({ formWrapper, someElem = [] }) => {
-    const formWrapperId = document.getElementById(formWrapper),
-        form = formWrapperId.querySelector('.form-horizontal'),
+    const formWrapperId = document.getElementById(formWrapper);
+
+    if (!formWrapperId) return
+
+    const form = formWrapperId.querySelector('[name$="form"]') || formWrapperId.querySelector('[name$="form2"]'),
         formBtn = formWrapperId.querySelector('.feedback');
 
     const sendData = (data) => {
