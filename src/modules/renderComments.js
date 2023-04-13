@@ -1,4 +1,6 @@
 export const renderComments = (block) => {
+    block.innerHTML = ''
+
     block.insertAdjacentHTML('beforeend',
         `<div class="review-margin-bottom row comment-item">
             <div class="col-xs-3 col-sm-2">

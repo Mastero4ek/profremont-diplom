@@ -2018,8 +2018,11 @@ input.error {
 }
 
 .loader {
-  display: flex;
-  justify-content: center;
+  position: relative;
+}
+
+.loader>svg {
+  position: absolute;
 }
 
 .sertificate {
@@ -2062,6 +2065,19 @@ input.error {
 
 .sertificate__arrow>img {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .loader>svg {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .loader>svg {
+    left: 40%;
+  }
 }
 
 @media (max-width: 600px) {
