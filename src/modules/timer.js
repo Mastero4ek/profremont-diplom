@@ -70,7 +70,7 @@ export const timer = (deadline, timerBlock) => {
                     clearTimeout(idTimer);
                 }
 
-                if (timerSeconds.textContent == '00') endPromotionText()
+                if (timerSeconds.textContent == '00' && timerMinutes.textContent == '00') endPromotionText()
             }
         }, 1000);
     }
