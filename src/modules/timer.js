@@ -5,7 +5,8 @@ export const timer = (deadline, timerBlock) => {
         timerMinutes = timerWrapper.querySelector('.count_3 > span'),
         timerSeconds = timerWrapper.querySelector('.count_4 > span'),
         text = timerWrapper.querySelector('.order-subheading'),
-        block = timerWrapper.querySelector('.order-inner');
+        formBtn = timerWrapper.querySelector('.feedback'),
+        block = timerWrapper.querySelector('.order-form');
 
     const editTime = num => (num < 10) ? `0${num}` : num
 
@@ -31,7 +32,8 @@ export const timer = (deadline, timerBlock) => {
     }
 
     const startPromotionText = () => {
-        block.style.pointerEvents = 'default'
+        block.style.border = '3px solid #00902a'
+        formBtn.disabled = false
         text.innerHTML = ''
         text.insertAdjacentHTML('beforeend',
             `и <span class="text-normal">получите скидку 20%</span> <br />на
@@ -40,7 +42,8 @@ export const timer = (deadline, timerBlock) => {
     }
 
     const endPromotionText = () => {
-        block.style.pointerEvents = 'none'
+        block.style.border = '3px solid gray'
+        formBtn.disabled = true
         text.innerHTML = ''
         text.insertAdjacentHTML('beforeend',
             `Акция завершена!`
